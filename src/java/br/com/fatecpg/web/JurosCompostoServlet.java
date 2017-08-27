@@ -86,20 +86,23 @@ public class JurosCompostoServlet extends HttpServlet {
             //cabeçalho da tabela
             out.println("<tr>");
             out.println("<th>Mês</th>");
-            out.println("<th>Juros em dinheiro</th>");
+            out.println("<th>Capital</th>");
             out.println("<th>Montante</th>");
             out.println("</tr>");
             //for para utilziar os dados do usuario
-            for(int i=1; i<=10; i++){
+            int montante = capital;
+            taxaJ = taxaJ / 100;
+            for(int i=1; i<=tempo; i++){
                 //inicio da tabela de resposta
                 out.println("<tr>");
-                //coluna do capital
+                //coluna do Tempo
+                out.println("<td>"+i+"</td>");
+                //coluna do Capital
                 out.println("<td>"+capital+"</td>");
-                int x = capital * i;
-                //coluna do juros em dinheiro
-                out.println("<td>Juros em dinheiro</td>");
                 //coluna do montante
-                out.println("<td>Montante</td>");
+                out.println("<td>"+montante+"</td>");
+                montante = capital*(1+taxaJ)^1 ;
+                capital = montante;
                 out.println("</tr>");
             }
             out.println("</table>");
