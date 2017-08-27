@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Gabriel
  */
-@WebServlet(name = "JurosCompostoServlet", urlPatterns = {"/juros-composto-servlet"})
+@WebServlet(name = "JurosCompostoServlet", urlPatterns = {"/juros-composto"})
 public class JurosCompostoServlet extends HttpServlet {
 
     /**
@@ -37,10 +37,58 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet JurosCompostoServlet</title>");            
+            out.println("<title>Juros Composto</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet JurosCompostoServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Gerador de tabuada</h1>");
+            int capital = 1;
+            int taxaJ = 1;
+            int tempo = 1;
+            try{
+                if(request.getParameter("capital")!= null){
+                capital = Integer.parseInt(request.getParameter("capital"));
+                }
+            }
+            catch(Exception ex){
+                out.println("<span style='color:red;'>Você entrou com um número no formato inválido no campo de capital. Tente novamente: </span><br>");
+            }
+            try{
+                if(request.getParameter("taxaJ")!= null){
+                taxaJ = Integer.parseInt(request.getParameter("taxaJ"));
+                }
+            }
+            catch(Exception ex){
+                out.println("<span style='color:red;'>Você entrou com um número no formato inválido no campo da taxa de juros. Tente novamente: </span><br>");
+            }
+            try{
+                if(request.getParameter("tempo")!= null){
+                tempo = Integer.parseInt(request.getParameter("tempo"));
+                }
+            }
+            catch(Exception ex){
+                out.println("<span style='color:red;'>Você entrou com um número no formato inválido no campo de tempo. Tente novamente: </span><br>");
+            }
+            out.println("<form>");
+            out.println("Capital inicial" + "<input type ='text' name = 'capital' value = '"+capital+"'/><br>");
+            out.println("Taxa de juros" + "<input type ='text' name = 'taxaJ' value = '"+taxaJ+"'/><br>");
+            out.println("Taxa de juros" + "<input type ='text' name = 'tempo' value = '"+tempo+"'/><br>");
+            out.println("<input type='submit' value='Gerar'/>");
+            out.println("</form>");
+            out.println("<hr/>");
+            out.println("<table border='1'>");
+            out.println("<tr>");
+            out.println("<th>Mês</th>");
+            out.println("<th>Juros em dinheiro</th>");
+            out.println("<th>Montante</th>");
+            out.println("</tr>");
+            for(int i=1; i<=10; i++){
+                out.println("<tr>");
+                out.println("<td>"+capital+" x "+i+" =</td>");
+                int x = capital * i;
+                out.println("<td>"+x+"</td>");
+                out.println("</tr>");
+            }
+            out.println("</table>");
             out.println("</body>");
             out.println("</html>");
         }
