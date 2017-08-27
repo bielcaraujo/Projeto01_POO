@@ -42,13 +42,13 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Gerador de tabuada</h1>");
             //inicialização das variaveis
-            int capital = 1;
-            int taxaJ = 1;
+            double capital = 1;
+            double taxaJ = 1;
             int tempo = 1;
             //tratamento de erro da variavel capital
             try{
                 if(request.getParameter("capital")!= null){
-                capital = Integer.parseInt(request.getParameter("capital"));
+                capital = Double.parseDouble(request.getParameter("capital"));
                 }
             }
             catch(Exception ex){
@@ -57,7 +57,7 @@ public class JurosCompostoServlet extends HttpServlet {
             //tratamento de erro da variavel taxaJ
             try{
                 if(request.getParameter("taxaJ")!= null){
-                taxaJ = Integer.parseInt(request.getParameter("taxaJ"));
+                taxaJ = Double.parseDouble(request.getParameter("taxaJ"));
                 }
             }
             catch(Exception ex){
@@ -76,7 +76,7 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<form>");
             out.println("Capital inicial" + "<input type ='text' name = 'capital' value = '"+capital+"'/><br>");
             out.println("Taxa de juros" + "<input type ='text' name = 'taxaJ' value = '"+taxaJ+"'/><br>");
-            out.println("Taxa de juros" + "<input type ='text' name = 'tempo' value = '"+tempo+"'/><br>");
+            out.println("Tempo" + "<input type ='text' name = 'tempo' value = '"+tempo+"'/><br>");
             out.println("<input type='submit' value='Gerar'/>");
             out.println("</form>");
             //final do form de entrada de dados do usuário
@@ -90,7 +90,7 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<th>Montante</th>");
             out.println("</tr>");
             //for para utilziar os dados do usuario
-            int montante = capital;
+            double montante = capital;
             taxaJ = taxaJ / 100;
             for(int i=1; i<=tempo; i++){
                 //inicio da tabela de resposta
@@ -98,11 +98,11 @@ public class JurosCompostoServlet extends HttpServlet {
                 //coluna do Tempo
                 out.println("<td>"+i+"</td>");
                 //coluna do Capital
-                out.println("<td>"+capital+"</td>");
-                //coluna do montante
                 out.println("<td>"+montante+"</td>");
-                montante = capital*(1+taxaJ)^1 ;
+                //coluna do montante
+                montante = capital*(1+taxaJ);
                 capital = montante;
+                out.println("<td>"+montante+"</td>");
                 out.println("</tr>");
             }
             out.println("</table>");
