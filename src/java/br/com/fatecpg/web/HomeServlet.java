@@ -40,7 +40,17 @@ public class HomeServlet extends HttpServlet {
             out.println("<title>Servlet HomeServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet HomeServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Home</h1>");
+            out.println("hr");
+            out.println("<p>ADS 3ºciclo Vespertino</p>");
+            out.println("Integrantes: Gabriel Colombo Araujo<br>");
+            out.println("Gabriel Daichi Kadota <br>");
+            out.println("João Victor Sebastian Marques<br>");
+            out.println("Rodrigo Garcia Moreira<br>");
+            out.println("Saulo Pedro da Silva <br>");
+            out.println("<hr>");
+            out.println("<a href='juros-simples'>Juros Simples</a> <br>");
+            out.println("<a href='juros-composto'>Juros Compostos</a> <br>");
             out.println("</body>");
             out.println("</html>");
         }
