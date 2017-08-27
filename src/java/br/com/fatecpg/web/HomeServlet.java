@@ -34,25 +34,258 @@ public class HomeServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Home</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Home</h1>");
-            out.println("hr");
-            out.println("<p>ADS 3ºciclo Vespertino</p>");
-            out.println("Integrantes: Gabriel Colombo Araujo<br>");
-            out.println("Gabriel Daichi Kadota <br>");
-            out.println("João Victor Sebastian Marques<br>");
-            out.println("Rodrigo Garcia Moreira<br>");
-            out.println("Saulo Pedro da Silva <br>");
-            out.println("<hr>");
-            out.println("<a href='juros-simples'>Juros Simples</a> <br>");
-            out.println("<a href='juros-composto'>Juros Compostos</a> <br>");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("<!DOCTYPE html><!DOCTYPE html>\n" +
+"<html lang=\"UTF-8\">\n" +
+"<head>\n" +
+"	<meta charset=\"UTF-8\">\n" +
+"	<title>Cont</title>\n" +
+" 	<style>body{\n" +
+"	margin:0;\n" +
+"	width: 100%;\n" +
+"	height:100%;\n" +
+"	min-width: 1024px;\n" +
+"	min-height: 1024px;\n" +
+"	background-color:#3f444c;\n" +
+"	}\n "
+    + ".h1{\n" +
+"	font-size:30px;\n" +
+"}" +
+                   
+".container{\n" +
+"	\n" +
+"	margin-left: 3%;\n" +
+"	margin-right: 3%;\n" +
+"	position: static;\n" +
+"}\n" +
+"header{\n" +
+"	width: 100%;\n" +
+"	height: 150px;\n" +
+"	position: static;\n" +
+"	background-color:#3f444c;\n" +
+"	color: white;\n" +
+"\n" +
+"}\n" +
+"#cabecalho{\n" +
+"\n" +
+"	font-size: 30px;\n" +
+"	padding: 2% 0% 0% 5%;\n" +
+"}\n" +
+"nav{\n" +
+"\n" +
+"	width: 100%;\n" +
+"	height: 100%;\n" +
+"\n" +
+"	background-color:#3f444c;\n" +
+"\n" +
+"}\n" +
+"nav ul li{\n" +
+"	float: left;\n" +
+"	margin: 20px;\n" +
+"	font-size: 20px;\n" +
+"	list-style-type: none;\n" +
+"}\n" +
+" nav ul li a:link{\n" +
+"	text-decoration: none;\n" +
+"	color: white;\n" +
+"}" +
+" nav ul li a:visited{\n" +
+"	text-decoration: none;\n" +
+"	color: white;\n" +
+"}" +                    
+"\n" +
+"section{\n" +
+"	position:relative;\n" +
+"	width: 100%;\n" +
+"	height: 60%;\n" +
+"	min-width: 1024px;\n" +
+"	min-height: 700px;\n" +
+"	background-color:#38414f;\n" +
+"	background: url(\"banner.jpg\");\n" +
+"	background-size: cover;\n" +
+"}\n" +
+"\n" +
+".container-ban{\n" +
+"\n" +
+"	width: 100%;\n" +
+"	height: 100%;\n" +
+"}\n" +
+"\n" +
+"#categoria1{\n" +
+"	\n" +
+"	background-color: #fff;\n" +
+"	text-align:center;\n" +
+"	margin-left:8%; \n" +
+"	background-position: center;\n" +
+"}\n" +
+"#categoria2{\n" +
+"	\n" +
+"	background-color: #fff;\n" +
+"	text-align:center;\n" +
+"	background-position: center;\n" +
+"}\n" +
+"#novaCategoria{\n" +
+"	background-color: #fff;\n" +
+"	text-align:center;\n" +
+"	background-position: center;\n" +
+"}\n" +
+".option{\n" +
+"	float: left;\n" +
+"	margin-top:14%;\n" +
+"	margin-left: 2%;\n" +
+"	width: 25%;\n" +
+"	height: 100%;\n" +
+"	min-height: 330px;\n" +
+"	border-radius: 10px;\n" +
+"	padding-top:10px;\n" +
+"	padding-left: 10px; \n" +
+"}\n" +
+"\n" +
+"footer{\n" +
+"	background-color: #fff;\n" +
+"	padding: 50px;\n" +
+"}\n" +
+"\n" +
+".explicacao{\n" +
+"	position:static;\n" +
+"	width: 100%;\n" +
+"	height: 400px;\n" +
+"	background-color: #fff;\n" +
+"}\n" +
+".container-exp{\n" +
+"	float: left;\n" +
+"	width: 50%;\n" +
+"	height: 100%;\n" +
+"	background-color: #fff;\n" +
+"}\n" +
+".titulo{\n" +
+"	padding: 50px;\n" +
+"}\n" +
+".conteudo{\n" +
+"	padding-left:50px;\n" +
+"	padding-right:50px;\n" +
+"}\n" +
+"iframe{\n" +
+"	float: left;\n" +
+"}\n" +
+".formula{\n" +
+"	float: left;\n" +
+"	padding-top: 100px; \n" +
+"	font-size: 20px;\n" +
+"	width:40%;\n" +
+"	background-color: #fff;\n" +
+"}</style>\n" +
+"</head>\n" +
+"<body>\n" +
+"	<div class=\"container\">\n" +
+"		<header><!--Inicio Cabeçalho-->\n" +
+"			<div id=\"cabecalho\">CONT</div><!--Nome a direita-->\n" +
+"			<nav>\n" +
+"				<ul><!--Itens do menu-->\n" +
+"					<li><a href='home'> Principal</a></li>\n" +
+"					<li><a href='juros-simples'> Juros Simples</a></li>\n" +
+"					<li><a href='juros-composto'>  Juros Composto</a></li>\n" +
+"					<li><a href='#explicacao'> Conceito</a></li>\n" +
+"					<li><a href='#footer'> Equipe</a></li>\n" +
+"				</ul>\n" +
+"			</nav>\n" +
+"		</header><!--Fim cabeçalho-->\n" +
+"	</div>\n" +
+"		<section><!--categorias-->\n" +
+"			<div class=\"container-ban\"><!--Container dos intens de categorias-->\n" +
+"				<a href='juros-simples'>\n" +
+"				<div class=\"option\" id=\"categoria1\"><!--Juros Simples-->\n" +
+"					<h1>Juros <br> Simples</h1>\n" +
+"				</div>\n" +
+"				</a>\n" +
+"				<a href='juros-composto'>\n" +
+"				<div class=\"option\" id=\"categoria2\"><!--Juros Compostos-->\n" +
+"					<h1>Juros <br> Composto</h1> \n" +
+"				</div>\n" +
+"				</a>	\n" +
+"				<div class=\"option\" id=\"novaCategoria\"><!-- Cadastro de nova categoria-->\n" +
+"					<h1>Conceito<br> </h1> \n" +
+"				</div>\n" +
+"			</div>	\n" +
+"		</section><!--fim categorias-->\n" +
+"		<div class=\"explicacao\">\n" +
+"			<div class=\"container-exp\">\n" +
+"				<div class=\"titulo\">\n" +
+"					<h1>Juros</h1>\n" +
+"				</div>\n" +
+"				<div class=\"conteudo\">\n" +
+"					<p>Podemos definir juros como o rendimento de uma aplicação financeira, valor referente ao atraso no pagamento de uma prestação ou a quantia paga pelo empréstimo de um capital. Atualmente, o sistema financeiro utiliza o regime de juros compostos, por ser mais lucrativo. Os juros simples eram utilizados nas situações de curto prazo. Hoje não utilizamos a capitalização baseada no regime simples, mas, de qualquer forma, vamos entender como ele funciona.</p>\n" +
+"				</div>\n" +
+"			</div>\n" +
+"			<iframe width=\"45%\" height=\"100%\" src=\"https://www.youtube.com/embed/NS1AVfrVAgQ\" frameborder=\"0\" allowfullscreen></iframe>\n" +
+"		</div>\n" +
+"				<div class=\"explicacao\">\n" +
+"				<div class=\"container-exp\">\n" +
+"					<div class=\"titulo\">\n" +
+"						<h1>Juros Simples</h1>\n" +
+"					</div>\n" +
+"					<div class=\"conteudo\">\n" +
+"						<p>Juros simples: como calcular\n" +
+"\n" +
+"				No sistema de capitalização simples, os juros são calculados com base no valor da dívida ou da aplicação. Dessa forma, o valor dos juros é igual no período de aplicação ou composição da dívida.A expressão matemática utilizada para o cálculo das situações envolvendo juros simples é a seguinte:		\n" +
+"				<br></p>\n" +
+"					</div>\n" +
+"				</div>\n" +
+"				<div class=\"formula\">\n" +
+"					 <code>\n" +
+"					J =	 C * i * t<br>\n" +
+"					J = juros<br>\n" +
+"					C = capital<br>\n" +
+"					i = taxa de juros<br>\n" +
+"					t = tempo de aplicação (mês, bimestre, trimestre, semestre, ano...)<br>\n" +
+"					<hr>\n" +
+"					  	Ao somarmos os juros ao valor principal temos o montante.<br>\n" +
+"   						Montante = Principal + Juros<br>\n" +
+"   						Montante = Principal + ( Principal x Taxa de juros x Número de períodos ) <br>\n" +
+"						M = P . ( 1 + ( i . n ) )<br>\n" +
+"					</code>\n" +
+"\n" +
+"				 </div>\n" +
+"				</div>\n" +
+"\n" +
+"					<div class=\"explicacao\">\n" +
+"				<div class=\"container-exp\">\n" +
+"					<div class=\"titulo\">\n" +
+"						<h1>Juros Composto</h1>\n" +
+"					</div>\n" +
+"					<div class=\"conteudo\">\n" +
+"						<p>Os juros compostos são a prática de juros sobre juros. Eles são muito utilizados pelo sistema financeiro, pois oferecem maior rentabilidade se comparados ao juro simples.\n" +
+"						O atual sistema financeiro utiliza o regime de juros compostos, pois ele oferece uma maior rentabilidade se comparado com o regime de juros simples, em que o valor dos rendimentos torna-se fixo. O juro composto incide mês a mês de acordo com o somatório acumulativo do capital com o rendimento mensal, isto é, prática do juro sobre juro. As modalidades de investimentos e financiamentos são calculadas de acordo com esse modelo de investimento, pois ele oferece um maior rendimento, originando mais lucro.\n" +
+"						</p>\n" +
+"\n" +
+"					</div>\n" +
+"				</div>\n" +
+"				<div class=\"formula\">\n" +
+"					 <code>\n" +
+"						M = C * (1 + i)t<br>\n" +
+"						M: montante<br>\n" +
+"						C: capital<br>\n" +
+"						i: taxa de juros<br>\n" +
+"						t: tempo de aplicação<br>\n" +
+"						\n" +
+"					</code>\n" +
+"\n" +
+"				 </div>\n" +
+"				</div>\n" +
+"\n" +
+"		\n" +
+"		<footer>\n" +
+"			<p><b>ADS 3ºciclo Vespertino</b></p>\n" +
+"            Integrantes: Gabriel Colombo Araujo<br>\n" +
+"            Gabriel Daichi Kadota <br>\n" +
+"            João Victor Sebastian Marques<br>\n" +
+"            Rodrigo Garcia Moreira<br>\n" +
+"            Saulo Pedro da Silva <br>\n" +
+"\n" +
+"		</footer>\n" +
+"	\n" +
+"</body>\n" +
+"</html>");
+         
         }
     }
 
