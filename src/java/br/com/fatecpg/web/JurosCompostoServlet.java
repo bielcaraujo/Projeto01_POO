@@ -41,9 +41,11 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Gerador de tabuada</h1>");
+            //inicialização das variaveis
             int capital = 1;
             int taxaJ = 1;
             int tempo = 1;
+            //tratamento de erro da variavel capital
             try{
                 if(request.getParameter("capital")!= null){
                 capital = Integer.parseInt(request.getParameter("capital"));
@@ -52,6 +54,7 @@ public class JurosCompostoServlet extends HttpServlet {
             catch(Exception ex){
                 out.println("<span style='color:red;'>Você entrou com um número no formato inválido no campo de capital. Tente novamente: </span><br>");
             }
+            //tratamento de erro da variavel taxaJ
             try{
                 if(request.getParameter("taxaJ")!= null){
                 taxaJ = Integer.parseInt(request.getParameter("taxaJ"));
@@ -60,6 +63,7 @@ public class JurosCompostoServlet extends HttpServlet {
             catch(Exception ex){
                 out.println("<span style='color:red;'>Você entrou com um número no formato inválido no campo da taxa de juros. Tente novamente: </span><br>");
             }
+            //tratamento de erro da variavel tempo
             try{
                 if(request.getParameter("tempo")!= null){
                 tempo = Integer.parseInt(request.getParameter("tempo"));
@@ -68,24 +72,34 @@ public class JurosCompostoServlet extends HttpServlet {
             catch(Exception ex){
                 out.println("<span style='color:red;'>Você entrou com um número no formato inválido no campo de tempo. Tente novamente: </span><br>");
             }
+            //inicio do form de entrada de dados do usuário
             out.println("<form>");
             out.println("Capital inicial" + "<input type ='text' name = 'capital' value = '"+capital+"'/><br>");
             out.println("Taxa de juros" + "<input type ='text' name = 'taxaJ' value = '"+taxaJ+"'/><br>");
             out.println("Taxa de juros" + "<input type ='text' name = 'tempo' value = '"+tempo+"'/><br>");
             out.println("<input type='submit' value='Gerar'/>");
             out.println("</form>");
+            //final do form de entrada de dados do usuário
             out.println("<hr/>");
+            //inicio da tabela
             out.println("<table border='1'>");
+            //cabeçalho da tabela
             out.println("<tr>");
             out.println("<th>Mês</th>");
             out.println("<th>Juros em dinheiro</th>");
             out.println("<th>Montante</th>");
             out.println("</tr>");
+            //for para utilziar os dados do usuario
             for(int i=1; i<=10; i++){
+                //inicio da tabela de resposta
                 out.println("<tr>");
-                out.println("<td>"+capital+" x "+i+" =</td>");
+                //coluna do capital
+                out.println("<td>"+capital+"</td>");
                 int x = capital * i;
-                out.println("<td>"+x+"</td>");
+                //coluna do juros em dinheiro
+                out.println("<td>Juros em dinheiro</td>");
+                //coluna do montante
+                out.println("<td>Montante</td>");
                 out.println("</tr>");
             }
             out.println("</table>");
