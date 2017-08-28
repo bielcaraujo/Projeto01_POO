@@ -42,9 +42,9 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Gerador de Tabela de Juros Composto</h1>");
             //inicialização das variaveis
-            double capital = 1;
-            double taxaJ = 1;
-            int tempo = 1;
+            double capital = 0;
+            double taxaJ = 0;
+            int tempo = 0;
             //tratamento de erro da variavel capital
             try{
                 if(request.getParameter("capital")!= null){
@@ -74,9 +74,9 @@ public class JurosCompostoServlet extends HttpServlet {
             }
             //inicio do form de entrada de dados do usuário
             out.println("<form>");
-            out.println("Capital inicial" + "<input type ='text' name = 'capital' value = '"+capital+"'/><br>");
-            out.println("Taxa de juros" + "<input type ='text' name = 'taxaJ' value = '"+taxaJ+"'/><br>");
-            out.println("Tempo" + "<input type ='text' name = 'tempo' value = '"+tempo+"'/><br>");
+            out.println("Capital inicial" + "<input type='number' step='0.01' min='1' name = 'capital' value = '"+capital+"'/><br>");
+            out.println("Taxa de juros" + "<input type ='number' step='0.01' min='0' name = 'taxaJ' value = '"+taxaJ+"'/><br>");
+            out.println("Tempo" + "<input type ='number' step='0.01' required min='1' name = 'tempo' value = '"+tempo+"'/><br>");
             out.println("<input type='submit' value='Gerar'/>");
             out.println("</form>");
             //final do form de entrada de dados do usuário
@@ -88,6 +88,7 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<th>Mês</th>");
             out.println("<th>Capital</th>");
             out.println("<th>Montante</th>");
+            out.println("<th>Juros</th>");
             out.println("</tr>");
             //for para utilziar os dados do usuario
             double montante = capital;
@@ -101,8 +102,10 @@ public class JurosCompostoServlet extends HttpServlet {
                 out.println("<td>"+montante+"</td>");
                 //coluna do montante
                 montante = capital*(1+taxaJ);
+                double juros = montante - capital;
                 capital = montante;
                 out.println("<td>"+montante+"</td>");
+                out.println("<td>"+juros+"</td>");
                 out.println("</tr>");
             }
             out.println("</table>");
