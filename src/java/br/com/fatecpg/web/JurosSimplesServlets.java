@@ -44,7 +44,7 @@ public class JurosSimplesServlets extends HttpServlet {
             double capital = 0;
             double taxa = 0;
             double juros = 0; 
-            double tempo = 0;
+            int tempo = 0;
             double monte = 0;
             //tratamento da variavel capital
             try{
