@@ -34,33 +34,36 @@ public class HomeServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html><!DOCTYPE html>\n" +
+            out.println(""+
+"<!DOCTYPE html><!DOCTYPE html>\n" +
 "<html lang=\"UTF-8\">\n" +
 "<head>\n" +
 "	<meta charset=\"UTF-8\">\n" +
 "	<title>Cont</title>\n" +
-" 	<style>body{\n" +
+" 	<style>"+
+"       body{\n" +
 "	margin:0;\n" +
 "	width: 100%;\n" +
 "	height:100%;\n" +
 "	min-width: 1024px;\n" +
 "	min-height: 1024px;\n" +
+"       font-family: \"Roboto\", sans-serif;\n"+
 "	background-color:#3f444c;\n" +
-"	}\n "
-    + ".h1{\n" +
-"	font-size:30px;\n" +
-"}" +
-                   
+"	background: url(\'http://www.excellencesolucoes.com.br/images/banner08-empresa-escritorio-contabilidade-morumbi-sp-sao-paulo-empresarial-excellence-solucoes-contabeis-tributarias-fiscal-empresas-referencia-escritorios-zona-oeste-leste-norte-sul-melhor.jpg\')no-repeat;\n "+
+"    	background-size: cover;\n" +
+"	background-attachment: fixed;}\n"+ 
+                    
 ".container{\n" +
 "	\n" +
 "	margin-left: 3%;\n" +
 "	margin-right: 3%;\n" +
 "	position: static;\n" +
 "}\n" +
+                    
 "header{\n" +
 "	width: 100%;\n" +
 "	height: 150px;\n" +
-"	position: static;\n" +
+"	\n" +
 "	background-color:#3f444c;\n" +
 "	color: white;\n" +
 "\n" +
@@ -93,15 +96,16 @@ public class HomeServlet extends HttpServlet {
 "	color: white;\n" +
 "}" +                    
 "\n" +
-"section{\n" +
+"section#banner{\n" +
 "	position:relative;\n" +
 "	width: 100%;\n" +
 "	height: 60%;\n" +
 "	min-width: 1024px;\n" +
 "	min-height: 700px;\n" +
 "	background-color:#38414f;\n" +
-"	background: url(\"banner.jpg\");\n" +
-"	background-size: cover;\n" +
+"	background: url(\'http://www.excellencesolucoes.com.br/images/banner08-empresa-escritorio-contabilidade-morumbi-sp-sao-paulo-empresarial-excellence-solucoes-contabeis-tributarias-fiscal-empresas-referencia-escritorios-zona-oeste-leste-norte-sul-melhor.jpg\');\n "+
+"	background-size: cover;\n"+ 
+"       background-attachment: fixed;"+
 "}\n" +
 "\n" +
 ".container-ban{\n" +
@@ -115,19 +119,29 @@ public class HomeServlet extends HttpServlet {
 "	background-color: #fff;\n" +
 "	text-align:center;\n" +
 "	margin-left:8%; \n" +
+"       background:url(\"http://f.i.uol.com.br/folha/mercado/images/16019220.jpeg\") no-repeat;\n"+                    
+"       background-size:cover;"+
 "	background-position: center;\n" +
 "}\n" +
 "#categoria2{\n" +
 "	\n" +
 "	background-color: #fff;\n" +
+"       background:url(\"http://oprimorico.com.br/wp-content/uploads/2017/03/taxas-de-juros-saiba-como-usar-o-cdi-selic-ipca-e-igpm-a-seu-favor-933x445.jpeg\") no-repeat;\n"+                    
+"       background-size:cover;"+
 "	text-align:center;\n" +
 "	background-position: center;\n" +
 "}\n" +
 "#novaCategoria{\n" +
 "	background-color: #fff;\n" +
 "	text-align:center;\n" +
+"       background:url(\"http://conceito.de/wp-content/uploads/2014/03/cognitivismo.jpg\") no-repeat;\n"+                    
+"       background-size:cover;"+
+"	text-align:center;\n" +
 "	background-position: center;\n" +
 "}\n" +
+".botao{\n"+                    
+"width:90%; height:70px; background:white; color:black; padding-top:30px; border-radius:5px; box-shadow:5px 5px 4px 4px;\n"+                     
+"}\n"+                    
 ".option{\n" +
 "	float: left;\n" +
 "	margin-top:14%;\n" +
@@ -146,10 +160,11 @@ public class HomeServlet extends HttpServlet {
 "}\n" +
 "\n" +
 ".explicacao{\n" +
-"	position:static;\n" +
-"	width: 100%;\n" +
-"	height: 400px;\n" +
-"	background-color: #fff;\n" +
+"	width: 100%;\n"+
+"	height: 400px;\n"+
+"	background-color: #fff;\n"+
+"	margin-bottom: 100px;\n"+
+"	background-attachment: fixed;\n" +
 "}\n" +
 ".container-exp{\n" +
 "	float: left;\n" +
@@ -178,8 +193,8 @@ public class HomeServlet extends HttpServlet {
 "<body>\n" +
 "	<div class=\"container\">\n" +
 "		<header><!--Inicio Cabeçalho-->\n" +
-"			<div id=\"cabecalho\">CONT</div><!--Nome a direita-->\n" +
-"			<nav>\n" +
+"			<div id=\"cabecalho\">JAVA EE PROJECT</div><!--Nome a direita-->\n" +
+"			<HR><nav>\n" +
 "				<ul><!--Itens do menu-->\n" +
 "					<li><a href='home'> Principal</a></li>\n" +
 "					<li><a href='juros-simples'> Juros Simples</a></li>\n" +
@@ -190,20 +205,20 @@ public class HomeServlet extends HttpServlet {
 "			</nav>\n" +
 "		</header><!--Fim cabeçalho-->\n" +
 "	</div>\n" +
-"		<section><!--categorias-->\n" +
+"		<section id='banner'><!--categorias-->\n" +
 "			<div class=\"container-ban\"><!--Container dos intens de categorias-->\n" +
 "				<a href='juros-simples'>\n" +
 "				<div class=\"option\" id=\"categoria1\"><!--Juros Simples-->\n" +
-"					<h1>Juros <br> Simples</h1>\n" +
+"					<h1 class='botao'>Juros <br> Simples</h1>\n" +
 "				</div>\n" +
 "				</a>\n" +
 "				<a href='juros-composto'>\n" +
 "				<div class=\"option\" id=\"categoria2\"><!--Juros Compostos-->\n" +
-"					<h1>Juros <br> Composto</h1> \n" +
+"					<h1 class='botao'>Juros <br> Composto</h1> \n" +
 "				</div>\n" +
 "				</a>	\n" +
 "				<div class=\"option\" id=\"novaCategoria\"><!-- Cadastro de nova categoria-->\n" +
-"					<h1>Conceito<br> </h1> \n" +
+"					<h1 class='botao'>Conceito<br> </h1> \n" +
 "				</div>\n" +
 "			</div>	\n" +
 "		</section><!--fim categorias-->\n" +
