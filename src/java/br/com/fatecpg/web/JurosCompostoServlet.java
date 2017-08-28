@@ -40,7 +40,7 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<title>Juros Composto</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Gerador de tabuada</h1>");
+            out.println("<h1>Gerador de Tabela de Juros Composto</h1>");
             //inicialização das variaveis
             double capital = 1;
             double taxaJ = 1;

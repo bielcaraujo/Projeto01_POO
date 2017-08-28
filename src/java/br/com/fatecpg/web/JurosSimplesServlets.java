@@ -40,7 +40,61 @@ public class JurosSimplesServlets extends HttpServlet {
             out.println("<title>Servlet JurosSimplesServlets</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet JurosSimplesServlets at " + request.getContextPath() + "</h1>");
+            //entrada das variaveis
+            double capital = 0;
+            double taxa = 0;
+            double juros = 0; 
+            double tempo = 0;
+            double monte = 0;
+            //tratamento
+            try{
+                if(request.getParameter("capital")!= null){
+                capital = Double.parseDouble(request.getParameter("capital"));
+                }
+            }
+            catch(Exception ex){
+                out.println("<span style='color:red;'>Você entrou com um número no formato inválido no campo de capital. Tente novamente: </span><br>");
+            }
+            //tratamento de erro da variavel taxaJ
+            try{
+                if(request.getParameter("taxa")!= null){
+                taxa = Double.parseDouble(request.getParameter("taxaJ"));
+                }
+            }
+            catch(Exception ex){
+                out.println("<span style='color:red;'>Você entrou com um número no formato inválido no campo da taxa de juros. Tente novamente: </span><br>");
+            }
+            //tratamento de erro da variavel tempo
+            try{
+                if(request.getParameter("tempo")!= null){
+                tempo = Integer.parseInt(request.getParameter("tempo"));
+                }
+            }
+            catch(Exception ex){
+                out.println("<span style='color:red;'>Você entrou com um número no formato inválido no campo de tempo. Tente novamente: </span><br>");
+            }
+            
+            //campos e calculos
+            out.println("<h1>Calculo juros simple</h1>");
+            out.println("<br>");
+            out.println("<div>");
+            out.println("<p><strong>Preencha os campos abaixo</strong></p>");
+            out.println("<form>");
+            out.println("Capital: " + "<input type = 'text' name = 'capitalS' value = '"+capital+"'/>");
+            out.println("<br>");
+            out.println("taxa de juros: " + "<input type ='text' name = 'JurosS' value = '"+taxa+"'/>");
+            out.println("<br>");
+            out.println("tempo: " + "<input type ='text' name = 'tempoS' value = '"+tempo+"'/>");
+            out.println("<input type='submit' value='Calcular'/>");
+            
+            out.println("</form>");
+            //calculo do juros e exibição
+            juros = (capital * taxa * tempo/100);
+            out.println("<h2>Juros de: "+juros+"</h2>");
+            //calculo do montantee exibição
+            monte = capital+juros;
+            out.println("<h2>Montante de: "+monte+"</h2>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }
