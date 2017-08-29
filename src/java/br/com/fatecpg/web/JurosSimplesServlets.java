@@ -48,7 +48,7 @@ public class JurosSimplesServlets extends HttpServlet {
             double monte = 0;
             //tratamento da variavel capital
             try{
-                if(request.getParameter("capital")!= null && Double.parseDouble(request.getParameter("capital")) > 0){
+                if(request.getParameter("capital")!= null){
                 capital = Double.parseDouble(request.getParameter("capital"));
                 }
             }
@@ -84,7 +84,7 @@ public class JurosSimplesServlets extends HttpServlet {
             out.println("<br>");
             out.println("Taxa de juros: " + "<input type ='number' step='0.01' required min='0' name = 'taxa' value = '"+taxa+"'/>");
             out.println("<br>");
-            out.println("Tempo: " + "<input type ='number' step='0.01' required min='0' name = 'tempo' value = '"+tempo+"'/>");
+            out.println("Tempo: " + "<input type ='number' required min='0' name = 'tempo' value = '"+tempo+"'/>");
             out.println("<input type='submit' value='Calcular'/>");
             
             out.println("</form>");
