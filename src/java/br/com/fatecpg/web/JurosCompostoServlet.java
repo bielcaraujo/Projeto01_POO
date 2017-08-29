@@ -218,8 +218,8 @@ out.println("</head>\n" +
             out.println("  <label for=\"taxaJ\">Taxa de juros</label><br>" + "<input type ='number' step='0.01' min='0' name = 'taxaJ' value = '"+taxaJ+"'/><br>");
             out.println("   <label for=\"tempo\">Tempo</label><br>" + "<input type ='number' required min='1' name = 'tempo' value = '"+tempo+"'/><br>");
             out.println("<input class='btnEnviar' type='submit' value='Gerar'/><br>");
-              out.println("<input class='btnApagar' type='reset' value='Apagar'/></input><br><br>");
-              out.println("<button>");
+             //out.println("<input class='btnApagar' type='reset' value='Apagar'/></input><br><br>");
+            out.println("<button>");
             out.println("</form>");
             //final do form de entrada de dados do usuário
             out.println("<hr/>");

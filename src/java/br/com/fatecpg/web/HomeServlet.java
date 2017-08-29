@@ -199,8 +199,8 @@ public class HomeServlet extends HttpServlet {
 "					<li><a href='home'> Principal</a></li>\n" +
 "					<li><a href='juros-simples'> Juros Simples</a></li>\n" +
 "					<li><a href='juros-composto'>  Juros Composto</a></li>\n" +
-"					<li><a href='#explicacao'> Conceito</a></li>\n" +
-"					<li><a href='#footer'> Equipe</a></li>\n" +
+"					<li><a href='#conceito'> Conceito</a></li>\n" +
+"					<li><a href='#grupo'> Equipe</a></li>\n" +
 "				</ul>\n" +
 "			</nav>\n" +
 "		</header><!--Fim cabeçalho-->\n" +
@@ -217,12 +217,14 @@ public class HomeServlet extends HttpServlet {
 "					<h1 class='botao'>Juros <br> Composto</h1> \n" +
 "				</div>\n" +
 "				</a>	\n" +
+"                               <a href='#conceito'> "+
 "				<div class=\"option\" id=\"novaCategoria\"><!-- Cadastro de nova categoria-->\n" +
 "					<h1 class='botao'>Conceito<br> </h1> \n" +
 "				</div>\n" +
+"                                </a>"+
 "			</div>	\n" +
 "		</section><!--fim categorias-->\n" +
-"		<div class=\"explicacao\">\n" +
+"		<div class=\"explicacao\" id=\"conceito\">\n" +
 "			<div class=\"container-exp\">\n" +
 "				<div class=\"titulo\">\n" +
 "					<h1>Juros</h1>\n" +
@@ -288,7 +290,7 @@ public class HomeServlet extends HttpServlet {
 "				</div>\n" +
 "\n" +
 "		\n" +
-"		<footer>\n" +
+"		<footer id=\"grupo\">\n" +
 "			<p><b>ADS 3ºciclo Vespertino</b></p>\n" +
 "            Integrantes: Gabriel Colombo Araujo<br>\n" +
 "            Gabriel Daichi Kadota <br>\n" +
