@@ -175,7 +175,7 @@ public class HomeServlet extends HttpServlet {
 ".titulo{\n" +
 "	padding: 50px;\n" +
 "}\n" +
-".conteudo{\n" +
+".conteudo{text-align:justify;\n" +
 "	padding-left:50px;\n" +
 "	padding-right:50px;\n" +
 "}\n" +

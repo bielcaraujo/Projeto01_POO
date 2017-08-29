@@ -30,17 +30,148 @@ public class JurosCompostoServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Juros Composto</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Gerador de Tabela de Juros Composto</h1>");
+out.println(""+
+"           <!DOCTYPE html>\n" +
+"               <html lang=\"UTF-8\">\n" +
+"               <head>\n" +
+"               <meta charset=\"UTF-8\">\n" +
+"               <title>Cont</title>");
+            //css
+out.println("<style>body{\n" +
+"	margin:0;\n" +
+"	width: 100%;\n" +
+"	height:100%;\n" +
+"	min-width: 1024px;\n" +
+"	background-color:#3f444c;\n" +
+"	font-family: \"Roboto\", sans-serif;\n" +
+"	background: url(\"http://www.excellencesolucoes.com.br/images/banner08-empresa-escritorio-contabilidade-morumbi-sp-sao-paulo-empresarial-excellence-solucoes-contabeis-tributarias-fiscal-empresas-referencia-escritorios-zona-oeste-leste-norte-sul-melhor.jpg\") no-repeat;\n" +
+"	background-size: cover;\n" +
+"	background-attachment: fixed;\n" +
+"	}\n" +
+"\n" +
+".container{	\n" +
+"	margin-left: 3%;\n" +
+"	margin-right: 3%;\n" +
+"	position: static;\n" +
+"}\n" +
+"\n" +
+"header{\n" +
+"	width: 100%;\n" +
+"	height: 90px;\n" +
+"	background-color:#3f444c;\n" +
+"	color: white;\n" +
+"	margin-bottom: 100px;\n" +
+"}\n" +
+"\n" +
+"\n" +
+"#cabecalho{\n" +
+"	font-size: 30px;\n" +
+"	padding: 2% 0% 0% 5%;\n" +
+"}\n" +
+"nav{\n" +
+"	width: 100%;\n" +
+"	height: 100%;\n" +
+"	background-color:#3f444c;\n" +
+"}\n" +
+"nav ul li{\n" +
+"	float: left;\n" +
+"	margin: 20px;\n" +
+"	font-size: 20px;\n" +
+"	list-style-type: none;\n" +
+"}\n" +
+"nav ul li:hover{\n" +
+"	background: black; \n" +
+"}\n" +
+"\n" +
+"nav ul li a:link{\n" +
+"	text-decoration: none;\n" +
+"	color: white;\n" +
+"}\n" +
+"\n" +
+"nav ul li a:visited{\n" +
+"	text-decoration: none;\n" +
+"	color: white;	\n" +
+"}\n" +
+".margem{\n" +
+"	padding-left:30px; \n" +
+"}"+
+"section#gerador{\n" +
+"	position:relative\n" +
+"	width: 100%;\n" +
+"	height: 100%;\n" +
+"	min-width: 1024px;\n" +
+"	min-height: 700px;\n" +
+"	background-color:#3f444c;\n" +
+"	background: url(\"http://www.excellencesolucoes.com.br/images/banner08-empresa-escritorio-contabilidade-morumbi-sp-sao-paulo-empresarial-excellence-solucoes-contabeis-tributarias-fiscal-empresas-referencia-escritorios-zona-oeste-leste-norte-sul-melhor.jpg\")no-repeat;\n" +
+"	background-size: cover;\n" +
+"	background-attachment: fixed;\n" +
+"}\n" +
+"\n" +
+".container-ban{\n" +
+"position:relative;\n" +
+"	width: 100%;\n" +
+"	height: 100%;\n" +
+"}\n" +
+"\n" +
+".btnEnviar{width:16%; background-color:green;color:white; margin-top:10px; border-radius:5px; border-shadow:5px 5px 4px 5px; }"+
+"footer{\n" +
+"	background-color: #fff;\n" +
+"	padding: 50px;\n" +
+"}\n" +
+".titulo{\n" +
+"	padding-left: 50px;\n" +
+"}\n" +
+"\n" +
+".explicacao{\n" +
+"	width: 100%;\n" +
+"	height: 100%;\n" +
+"	background-color: #fff;\n" +
+"	padding-top: 10px;\n" +
+"	margin-bottom: 10px;\n" +
+"	background-attachment: fixed;\n" +
+"\n" +
+"}\n" +
+".btnApagar{width:16%; background-color:#e21b21;color:white; margin-top:10px; border-radius:5px; border-shadow:5px 5px 4px 5px; }"+
+".container-exp{\n" +
+"	width: 40%;\n" +
+"	height: 100%;\n" +
+"	background-color: #fff;\n" +
+"}\n" +
+"\n" +
+".conteudo{\n" +
+"	padding-top: 10px;\n" +
+"	padding-bottom: 10px;\n" +
+"	height: 100%;\n" +
+"	padding-left:50px;\n" +
+"	padding-right:50px;\n" +
+"}\n" +
+"\n" +
+"table#tabela{\n" +
+"	width: 20%;\n" +
+"	height: 100%;\n" +
+"}</style>");
+            
+            //html
+out.println("</head>\n" +
+"<body>\n" +
+"	<div class=\"container\">\n" +
+"		<header><!--Inicio Cabeçalho-->\n" +
+"			<div id=\"cabecalho\">JAVA EE PROJECT</div><!--Nome a direita-->\n" +
+"			<hr>\n" +
+"			<nav>\n" +
+"				<ul><!--Itens do menu-->\n" +
+"					<li><a href=\"home\">Principal</a></li>\n" +
+"					<li><a href=\"juros-simples\">Juros Simples</a></li>\n" +
+"					<li><a href=\"juros-composto\">Juros Composto</a></li>\n" +
+"				</ul>\n" +
+"			</nav>\n" +
+"			\n" +
+"		</header><!--Fim cabeçalho-->");
+           
             //inicialização das variaveis
             double capital = 0;
             double taxaJ = 0;
@@ -73,22 +204,33 @@ public class JurosCompostoServlet extends HttpServlet {
                 out.println("<span style='color:red;'>Você entrou com um número no formato inválido no campo de tempo. Tente novamente: </span><br>");
             }
             //inicio do form de entrada de dados do usuário
+            out.println("<section id=\"gerador\"><!--categorias-->\n" +
+"			<div class=\"explicacao\" id=\"conceito\">\n" +
+"				<!--div class=\"container-exp\"-->\n" +
+"					<div class=\"titulo\" align=\"left\">\n" +
+"						<h3>Juros Composto</h3>\n" +
+"					</div>\n" +
+"					<div class=\"conteudo\">");
+            
+            
             out.println("<form>");
-            out.println("Capital inicial" + "<input type='number' step='0.01' min='1' name = 'capital' value = '"+capital+"'/><br>");
-            out.println("Taxa de juros" + "<input type ='number' step='0.01' min='0' name = 'taxaJ' value = '"+taxaJ+"'/><br>");
-            out.println("Tempo" + "<input type ='number' step='0.01' required min='1' name = 'tempo' value = '"+tempo+"'/><br>");
-            out.println("<input type='submit' value='Gerar'/>");
+            out.println(" <label for=\"capital\">Capital inicial</label><br>" + "<input type='number' step='0.01' min='1' name = 'capital' value = '"+capital+"'/><br>");
+            out.println("  <label for=\"taxaJ\">Taxa de juros</label><br>" + "<input type ='number' step='0.01' min='0' name = 'taxaJ' value = '"+taxaJ+"'/><br>");
+            out.println("   <label for=\"tempo\">Tempo</label><br>" + "<input type ='number' step='0.01' required min='1' name = 'tempo' value = '"+tempo+"'/><br>");
+            out.println("<input class='btnEnviar' type='submit' value='Gerar'/><br>");
+              out.println("<input class='btnApagar' type='reset' value='Apagar'/></input><br><br>");
+              out.println("<button>");
             out.println("</form>");
             //final do form de entrada de dados do usuário
             out.println("<hr/>");
             //inicio da tabela
-            out.println("<table border='1'>");
+            out.println("<table border='0'>");
             //cabeçalho da tabela
             out.println("<tr>");
-            out.println("<th>Mês</th>");
-            out.println("<th>Capital</th>");
-            out.println("<th>Montante</th>");
-            out.println("<th>Juros</th>");
+            out.println("<th>Mês<hr></th>");
+            out.println("<th>Capital<hr></th>");
+            out.println("<th>Montante<hr></th>");
+            out.println("<th>Juros<hr></th>");
             out.println("</tr>");
             //for para utilziar os dados do usuario
             double montante = capital;
@@ -97,20 +239,33 @@ public class JurosCompostoServlet extends HttpServlet {
                 //inicio da tabela de resposta
                 out.println("<tr>");
                 //coluna do Tempo
-                out.println("<td>"+i+"</td>");
+                out.println("<td class=\"margem\">"+i+"<hr></td>");
                 //coluna do Capital
-                out.println("<td>"+montante+"</td>");
+                out.println("<td class=\"margem\">"+montante+"<hr></td>");
                 //coluna do montante
                 montante = capital*(1+taxaJ);
                 double juros = montante - capital;
                 capital = montante;
-                out.println("<td>"+montante+"</td>");
-                out.println("<td>"+juros+"</td>");
+                out.println("<td class=\"margem\">"+montante+"<hr></td>");
+                out.println("<td class=\"margem\">"+juros+"<hr></td>");
                 out.println("</tr>");
             }
-            out.println("</table>");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("</table></button>");
+            out.println("</div>\n" +
+"				</div>\n" +
+"			<footer id=\"grupo\">\n" +
+"			<p><b>ADS 3ºciclo Vespertino</b></p>\n" +
+"            Integrantes: Gabriel Colombo Araujo<br>\n" +
+"            Gabriel Daichi Kadota <br>\n" +
+"            João Victor Sebastian Marques<br>\n" +
+"            Rodrigo Garcia Moreira<br>\n" +
+"            Saulo Pedro da Silva <br>\n" +
+"			</footer>\n" +
+"		</section><!--fim categorias-->\n" +
+"	</div>\n" +
+"</body>\n" +
+"</html>\n" +
+"");
         }
     }
 
