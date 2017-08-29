@@ -80,11 +80,11 @@ public class JurosSimplesServlets extends HttpServlet {
             out.println("<div>");
             out.println("<p><strong>Preencha os campos abaixo</strong></p>");
             out.println("<form>");
-            out.println("Capital: " + "<input type ='number' step='0.01' required min='0' name = 'capital' value = '"+capital+"'/>");
+            out.println("Capital: " + "<input type ='number' step='0.01' required min='1' name = 'capital' value = '"+capital+"'/>");
             out.println("<br>");
-            out.println("Taxa de juros: " + "<input type ='number' step='0.01' required min='0' name = 'taxa' value = '"+taxa+"'/>");
+            out.println("Taxa de juros: " + "<input type ='number' step='0.01' required min='1' name = 'taxa' value = '"+taxa+"'/>");
             out.println("<br>");
-            out.println("Tempo: " + "<input type ='number' required min='0' name = 'tempo' value = '"+tempo+"'/>");
+            out.println("Tempo: " + "<input type ='number' required min='1' name = 'tempo' value = '"+tempo+"'/>");
             out.println("<input type='submit' value='Calcular'/>");
             
             out.println("</form>");
